@@ -1,4 +1,4 @@
-from .models import *
+from about.models import *
 from django_seed import Seed
 
 def run():
@@ -17,5 +17,3 @@ def run():
     }
 
     seeder.add_entity(Person, 1, pnj)
-
-    seeder.execute()
