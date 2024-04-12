@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main id="main">
+
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+        <a href="/administration"><button class="btn btn-primary mb-5">BACK</button></a>
+        <div class="section-title">
+        <h2>Contact</h2>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+            <form method="POST">
+                {% csrf_token %}
+                    <div class="info d-flex flex-column gap-4">
+                        <div class="address d-flex gap-3 align-items-center">
+                            <i class="bi bi-geo-alt"></i>
+                            <label for="location">Location :</label>
+                            <input type='text' name='location' value='{{contact.location}}'></input>
+                        </div>
+    
+                        <div class="email d-flex gap-3 align-items-center">
+                            <i class="bi bi-envelope"></i>
+                            <label for="email">Email :</label>
+                            <input type='email' name='email' value={{contact.email}}></input>
+                        </div>
+    
+                        <div class="phone d-flex gap-3 align-items-center">
+                            <i class="bi bi-phone"></i>
+                            <label for="phone">Phone :</label>
+                            <input id="inputPhone" type="text" name='phone' value='{{ contact.phone }}'></input>
+                        </div>
+                        <button type='submit' class='btn btn-outline-success w-25'>Edit</button>
+                    </div>
+                    
+            </form>
+            
+            <div class='col-lg-3 d-flex align-items-center justify-content-center'>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Section -->
+</main>
+
+{% endblock content %}
+

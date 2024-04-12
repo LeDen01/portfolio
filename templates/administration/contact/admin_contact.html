@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main id="main">
+
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+        <a href="/administration"><button class="btn btn-primary mb-5">BACK</button></a>
+        <div class="section-title">
+        <h2>Contact</h2>
+        <p>
+            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
+            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit in iste officiis commodi quidem hic quas.
+        </p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="info">
+                    <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>{{contact.location}}</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>{{contact.email}}</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>{{contact.phone}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class='col-lg-3 d-flex align-items-center justify-content-center'>
+                <a href="/administration/contact/update"><button class='btn btn-outline-success'>Edit</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Section -->
+</main>
+
+{% endblock content %}
+

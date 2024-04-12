@@ -20,6 +20,8 @@ from about.views import *
 from skills.views import *
 from portfolio.views import *
 from services.views import *
+from testimonials.views import *
+from contact.views import *
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -42,6 +44,12 @@ urlpatterns = [
     path('administration/services/delete/<int:id>/', delete_services),
     path('administration/services/create/', create_services),
     path('administration/services/update/<int:id>/', update_services),
+    path('administration/testimonials/', admin_testimonials),
+    path('administration/testimonials/delete/<int:id>/', delete_testimonial),
+    path('administration/testimonials/create/', create_testimonial),
+    path('administration/testimonials/update/<int:id>/', update_testimonial),
+    path('administration/contact/', admin_contact),
+    path('administration/contact/update/', update_contact),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
