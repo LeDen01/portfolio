@@ -6,6 +6,11 @@
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
     <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
         <a href="/administration"><button class="btn btn-primary mb-5">BACK</button></a>
         <div class="section-title">
         <h2>Services</h2>

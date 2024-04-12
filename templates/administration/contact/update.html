@@ -8,6 +8,11 @@
 <section id="contact" class="contact">
     <div class="container">
         <a href="/administration"><button class="btn btn-primary mb-5">BACK</button></a>
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="section-title">
         <h2>Contact</h2>
         </div>

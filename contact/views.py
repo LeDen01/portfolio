@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from contact.models import *
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,6 +17,11 @@ def update_contact(request):
         contact.location = location
         contact.email = email
         contact.phone = phone
-        contact.save()
-        return redirect('/administration/contact')
+        if location == '' or email == '' or phone == '':
+            messages.error(request, 'Please fill all the fields')
+            return redirect('/administration/contact/update')
+        else :
+            messages.success(request, 'Informations have been updated') 
+            contact.save()
+            return redirect('/administration/contact')
     return render(request, 'administration/contact/update.html', {'contact': contact})

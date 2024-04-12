@@ -4,6 +4,11 @@
     <main id='main'>
         <section id="skills" class="skills section-bg">
             <div class="container">
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
                 <a href="/administration"><button class="btn btn-primary mb-5">BACK</button></a>
                 <div class="section-title">
                 <h2>Skills</h2>

@@ -5,6 +5,7 @@ from portfolio.models import *
 from services.models import *
 from testimonials.models import *
 from contact.models import *
+from django.contrib import messages
 
 # Create your views here.
 
@@ -56,6 +57,8 @@ def update_about(request):
                 person.birthday = request.POST['birthday']
         except:
             pass
-        person.save()   
+        messages.success(request, 'Informations have been updated') 
+        person.save()
+        
         return redirect('/administration/about')
     return render(request, 'administration/about/update.html', {'person': person})

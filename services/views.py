@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from services.models import *
+from django.contrib import messages
 
 # Create your views here.
 
@@ -9,6 +10,7 @@ def admin_services(request):
 
 def delete_services(request, id):
     service = Service.objects.get(id=id)
+    messages.success(request, 'Service deleted')
     service.delete()
     return redirect('/administration/services')
 
@@ -17,9 +19,14 @@ def create_services(request):
         icone = request.POST['icone']
         title = request.POST['title']
         description = request.POST['description']
-        service = Service(icone=icone, title=title, description=description)
-        service.save()
-        return redirect('/administration/services')
+        if icone != "" and title != "" and description != "":
+            service = Service(icone=icone, title=title, description=description)
+            messages.success(request, 'New service created') 
+            service.save()
+            return redirect('/administration/services')
+        else :
+            messages.error(request, 'Please fill all fields')
+            return redirect('/administration/services/create')
     return render(request, 'administration/services/create.html')
 
 def update_services(request, id):
@@ -28,6 +35,7 @@ def update_services(request, id):
         service.icone = request.POST['icone']
         service.title = request.POST['title']
         service.description = request.POST['description']
+        messages.success(request, 'Informations have been updated') 
         service.save()
         return redirect('/administration/services')
     return render(request, 'administration/services/update.html', {'service': service})
