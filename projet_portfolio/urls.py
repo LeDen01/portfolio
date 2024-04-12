@@ -17,13 +17,31 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from about.views import *
+from skills.views import *
+from portfolio.views import *
+from services.views import *
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),    
-    path('', index)
+    path('', index),
+    path('administration/', administration),
+    path('administration/about/', admin_about),
+    path('administration/about/update/', update_about),
+    path('administration/skills/', admin_skills),
+    path('administration/skills/create/', create_skills),
+    path('administration/skills/delete/<int:id>/', delete_skills),
+    path('administration/skills/update/<int:id>/', update_skill),
+    path('administration/portfolio/', admin_portfolio),
+    path('administration/portfolio/delete/<int:id>/', delete_portfolio),
+    path('administration/portfolio/create/', create_portfolio),
+    path('administration/portfolio/update/<int:id>/', update_portfolio),
+    path('administration/services/', admin_services),
+    path('administration/services/delete/<int:id>/', delete_services),
+    path('administration/services/create/', create_services),
+    path('administration/services/update/<int:id>/', update_services),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

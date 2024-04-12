@@ -1,0 +1,89 @@
+
+{% extends "base.html" %}
+{% block content %}
+<main id="main">
+    <a href="/administration"><button class="btn btn-primary mt-5 ms-5">BACK</button></a>
+    <h2 class="text-primary py-5 ps-5 fw-bold text-decoration-underline">About</h2>
+
+    <form method='POST' class="px-5" data-aos="fade-left" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label text-secondary fw-bold">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description'>{{ person.description }}</textarea>
+        </div>
+        <div class="mb-3">
+            <div class="col-lg-12 pt-4 pt-lg-0 content">
+                <label for="exampleFormControlInput1" class="form-label text-secondary fw-bold">Job title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{person.title}}" name='title' value='{{ person.title }}'>
+                <label for="exampleFormControlTextarea2" class="form-label text-secondary fw-bold pt-2">About You</label>
+                <textarea class="form-control mb-3" id="exampleFormControlTextarea2" rows="1" name='about'>{{ person.about }}</textarea>
+                <div class="row">
+                <div class="col-lg-6">
+                    <ul>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputBirthday">Birthday (YYYY-MM-DD) :</label></strong>
+                        <input id="inputBirthday" type="date" name='birthday' value='{{ person.birthday }}'>
+                    </li>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputWebsite">Website :</label></strong>
+                        <input id="inputWebsite" type="text" name='website' value='{{ person.website }}'>
+                    </li>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputPhone">Phone :</label></strong>
+                        <input id="inputPhone" type="text" name='phone' value='{{ person.phone }}'>
+                    </li>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputCity">City :</label></strong>
+                        <input id="inputCity" type="text" name='city' value='{{ person.city }}'>
+                    </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputAge">Age :</label></strong>
+                        <input id="inputAge" type="number" name='age' value='{{ person.age }}'>
+                    </li>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputDegree">Degree :</label></strong>
+                        <input id="inputDegree" type="text" name='degree' value='{{ person.degree }}'>
+                    </li>
+                    <li>
+                        <i class="bi bi-chevron-right"></i> 
+                        <strong><label for="inputEmail">Email :</label></strong>
+                        <input id="inputEmail" type="text" name='email' value='{{ person.email }}'>
+                    </li>
+                    <li>
+                        <div class="d-flex flex-row">
+                            <i class="bi bi-chevron-right"></i> 
+                            <strong><label for="inputFreelance">Freelance :</label></strong>
+                            <select class="form-select w-50 ms-1" aria-label="Default select example" name='freelance'>
+                                <option selected value='False'>False</option>
+                                <option value="True">True</option>
+                            </select>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea3" class="form-label text-secondary fw-bold">More Details</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" name='more'>{{ person.more }}</textarea>
+                </div>
+                <div class="mb-3 flex-column d-flex">
+                    <label for="exampleFormControlTextarea3" class="form-label text-secondary fw-bold">Image</label>
+                    <input type="file" id="exampleFormControlTextarea3" rows="3" name='image' value='{{ person.image }}'>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class='btn btn-outline-success mb-5'>Update</button>
+    </form>
+</main>
+
+{% endblock content %}

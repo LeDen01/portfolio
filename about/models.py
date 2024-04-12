@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Person(models.Model):
+    description = models.TextField()
+    title = models.CharField(max_length=100)
+    about = models.TextField()
+    more = models.TextField()
     image = models.ImageField(upload_to="images/")
     birthday = models.DateField()
     age = models.PositiveIntegerField()

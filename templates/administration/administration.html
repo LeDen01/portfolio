@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main id="main">
+    <h1 class="text-center ms-5 pt-5 fw-bold text-decoration-underline">Administration Page</h1>
+    <div class='container text-center pt-3'>
+        <div class="row">
+            <div class="col border py-3 flex-column">
+                <h3>Edit About</h3>
+                <a href="/administration/about"><button class="btn btn-primary">Edit/Create</button></a>
+                <img class="w-100 mt-1" src="{% static 'assets/img/about.png'%}" alt="">
+            </div>
+            <div class="col border py-3 flex-column">
+                <h3>Edit Skills</h3>
+                <a href="/administration/skills"><button class="btn btn-primary">Edit/Create</button></a>
+                <img class="w-100 mt-1" src="{% static 'assets/img/skills.png'%}" alt="">
+            </div>
+            <div class="col border py-3 flex-column">
+                <h3>Edit Portfolio</h3>
+                <a href="/administration/portfolio"><button class="btn btn-primary">Edit/Create</button></a>
+                <img class="w-100 mt-1" src="{% static 'assets/img/portfolio.png'%}" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border py-3 flex-column">
+                <h3>Edit Service</h3>
+                <a href="/administration/services"><button class="btn btn-primary">Edit/Create</button></a>
+                <img class="w-100 mt-1" src="{% static 'assets/img/service.png'%}" alt="">
+            </div>
+            <div class="col border py-3 flex-column">
+                <h3>Edit Testimonial</h3>
+                <button class="btn btn-primary">Edit/Create</button>
+                <img class="w-100 mt-1" src="{% static 'assets/img/testi.png'%}" alt="">
+            </div>
+            <div class="col border py-3 flex-column">
+                <h3>Edit Contact</h3>
+                <button class="btn btn-primary">Edit/Create</button>
+                <img class="w-100 mt-1" src="{% static 'assets/img/contact.png'%}" alt="">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}
