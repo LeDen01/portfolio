@@ -38,13 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap5',
     'about',
     'skills',
     'portfolio',
     'services',
     'testimonials',
     'contact',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +75,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'projet_portfolio.wsgi.application'
 
 
@@ -86,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'projet_portfolio',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'B10027030D',
         'HOST': 'localhost',
         'PORT': 3306
     }
